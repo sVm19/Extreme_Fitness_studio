@@ -178,7 +178,7 @@
 .tg-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 30px;
 }
 
 /* ============================================================
@@ -186,23 +186,19 @@
    ============================================================ */
 .tg-card {
     position: relative;
-    border-radius: 16px;
+    border-radius: 6px;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    border: 1px solid transparent;
+    box-shadow: none;
+    border: none;
     transition:
         transform 300ms ease-in-out,
-        box-shadow 300ms ease-in-out,
-        border-color 300ms ease-in-out;
+        box-shadow 300ms ease-in-out;
 }
 
 .tg-card:hover {
     transform: scale(1.03);
-    box-shadow:
-        0 8px 24px rgba(0, 0, 0, 0.10),
-        0 0 16px rgba(255, 82, 82, 0.12);
-    border-color: rgba(229, 57, 53, 0.25);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .tg-card-img {
@@ -305,7 +301,7 @@
 @media (max-width: 560px) {
     .tg-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 30px;
     }
 
     .tg-cta-btn {

@@ -135,14 +135,9 @@ function TransformationGallery() {
                                         >
                                             <img
                                                 src={img.src}
-                                                alt={img.label || `Transformation ${i + 1}`}
+                                                alt={`Transformation ${i + 1}`}
                                                 className="tg-card-img"
                                             />
-                                            {img.label && (
-                                                <div className="tg-card-overlay">
-                                                    <span className="tg-card-label">{img.label}</span>
-                                                </div>
-                                            )}
                                         </motion.div>
                                     ))}
                                 </motion.div>
