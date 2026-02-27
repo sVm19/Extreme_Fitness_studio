@@ -3,22 +3,6 @@ import './SocialLinks.css';
 
 const SOCIALS = [
     {
-        platform: 'instagram',
-        label: 'Instagram',
-        href: 'https://www.instagram.com/sugandhsingh.coach?igsh=Z2ZxYXZoNnVpZnlo&utm_source=qr',
-        icon: (
-            <svg viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.25-2.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" /></svg>
-        ),
-    },
-    {
-        platform: 'youtube',
-        label: 'YouTube',
-        href: 'https://www.youtube.com/@SugandhSingh-coach',
-        icon: (
-            <svg viewBox="0 0 24 24"><path d="M21.54 7.2a2.74 2.74 0 0 0-1.93-1.93C17.88 4.75 12 4.75 12 4.75s-5.88 0-7.61.52A2.74 2.74 0 0 0 2.46 7.2 28.7 28.7 0 0 0 2 12a28.7 28.7 0 0 0 .46 4.8 2.74 2.74 0 0 0 1.93 1.93c1.73.52 7.61.52 7.61.52s5.88 0 7.61-.52a2.74 2.74 0 0 0 1.93-1.93A28.7 28.7 0 0 0 22 12a28.7 28.7 0 0 0-.46-4.8ZM9.75 15.02V8.98L15.5 12l-5.75 3.02Z" /></svg>
-        ),
-    },
-    {
         platform: 'whatsapp',
         label: 'WhatsApp',
         href: 'https://wa.me/message/CGKTEQRZTOLXP1',
@@ -32,6 +16,22 @@ const SOCIALS = [
         href: 'https://www.facebook.com/share/18ahBoNdxi/',
         icon: (
             <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.87v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.88h-2.33v6.99A10 10 0 0 0 22 12Z" /></svg>
+        ),
+    },
+    {
+        platform: 'instagram',
+        label: 'Instagram',
+        href: 'https://www.instagram.com/sugandhsingh.coach?igsh=Z2ZxYXZoNnVpZnlo&utm_source=qr',
+        icon: (
+            <svg viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.25-2.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" /></svg>
+        ),
+    },
+    {
+        platform: 'youtube',
+        label: 'YouTube',
+        href: 'https://www.youtube.com/@SugandhSingh-coach',
+        icon: (
+            <svg viewBox="0 0 24 24"><path d="M21.54 7.2a2.74 2.74 0 0 0-1.93-1.93C17.88 4.75 12 4.75 12 4.75s-5.88 0-7.61.52A2.74 2.74 0 0 0 2.46 7.2 28.7 28.7 0 0 0 2 12a28.7 28.7 0 0 0 .46 4.8 2.74 2.74 0 0 0 1.93 1.93c1.73.52 7.61.52 7.61.52s5.88 0 7.61-.52a2.74 2.74 0 0 0 1.93-1.93A28.7 28.7 0 0 0 22 12a28.7 28.7 0 0 0-.46-4.8ZM9.75 15.02V8.98L15.5 12l-5.75 3.02Z" /></svg>
         ),
     },
 ];
