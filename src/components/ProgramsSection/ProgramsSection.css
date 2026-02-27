@@ -1,0 +1,309 @@
+/* ===== PROGRAMS SECTION ===== */
+.programs-section {
+    position: relative;
+    width: 85%;
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 60px 48px;
+    background: var(--bg-warm);
+    border-radius: 28px;
+    border: 1px solid rgba(229, 57, 53, 0.08);
+    overflow: hidden;
+}
+
+/* ============================================================
+   PARALLAX BACKGROUND
+   ============================================================ */
+.programs-parallax-bg {
+    position: absolute;
+    inset: -60px 0;
+    pointer-events: none;
+    z-index: 0;
+    will-change: transform;
+}
+
+.programs-blob {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.programs-blob-1 {
+    width: 550px;
+    height: 550px;
+    top: -10%;
+    right: -12%;
+    background: radial-gradient(circle at center,
+            rgba(255, 82, 82, 0.10) 0%,
+            rgba(255, 82, 82, 0.03) 40%,
+            transparent 70%);
+}
+
+.programs-blob-2 {
+    width: 400px;
+    height: 400px;
+    bottom: -5%;
+    left: -8%;
+    background: radial-gradient(circle at center,
+            rgba(255, 255, 255, 0.30) 0%,
+            rgba(255, 255, 255, 0.08) 40%,
+            transparent 70%);
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.programs-header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px;
+    z-index: 1;
+}
+
+.programs-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--glow-red);
+    margin-bottom: 12px;
+}
+
+.programs-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: var(--text-dark);
+    line-height: 1.15;
+    margin-bottom: 16px;
+}
+
+.programs-underline {
+    width: 90px;
+    height: 3px;
+    margin: 0 auto;
+    background: var(--primary-red);
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(255, 82, 82, 0.50);
+}
+
+/* ============================================================
+   HINDI DESCRIPTION
+   ============================================================ */
+.programs-hindi-description {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.programs-hindi-description p {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #555555;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.programs-hindi-description p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .programs-hindi-description {
+        width: 100%;
+        padding: 0 10px;
+        margin-bottom: 24px;
+    }
+
+    .programs-hindi-description p {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+}
+
+/* ============================================================
+   CARD GRID
+   ============================================================ */
+.programs-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    z-index: 1;
+}
+
+/* ============================================================
+   PROGRAM CARD
+   ============================================================ */
+.program-card {
+    position: relative;
+    background: var(--bg-card);
+    border-radius: 20px;
+    border: 1px solid rgba(229, 57, 53, 0.15);
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow: hidden;
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.05),
+        0 0 12px rgba(255, 82, 82, 0.04);
+    transition:
+        transform var(--transition-hover),
+        box-shadow var(--transition-hover),
+        border-color var(--transition-hover);
+}
+
+.program-card:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.07),
+        0 0 22px rgba(255, 82, 82, 0.10);
+    border-color: rgba(229, 57, 53, 0.25);
+}
+
+/* Hover gradient overlay — fades up from bottom */
+.program-card-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(255, 82, 82, 0.06) 0%,
+            transparent 50%);
+    opacity: 0;
+    transition: opacity var(--transition-hover);
+    pointer-events: none;
+    border-radius: 20px;
+    z-index: 0;
+}
+
+.program-card:hover .program-card-hover-overlay {
+    opacity: 1;
+}
+
+/* ── Featured card — middle elevated ── */
+.program-card-featured {
+    transform: scale(1.03);
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.06),
+        0 0 18px rgba(255, 82, 82, 0.08);
+    border-color: rgba(229, 57, 53, 0.25);
+}
+
+.program-card-featured:hover {
+    transform: scale(1.03) translateY(-8px);
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.08),
+        0 0 28px rgba(255, 82, 82, 0.14);
+}
+
+/* ============================================================
+   CARD INTERNALS
+   ============================================================ */
+.program-card-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(229, 57, 53, 0.08);
+    border-radius: 12px;
+    color: var(--primary-red);
+    position: relative;
+    z-index: 1;
+}
+
+.program-card-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.program-card-title {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    position: relative;
+    z-index: 1;
+}
+
+.program-card-desc {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--text-mid);
+    position: relative;
+    z-index: 1;
+}
+
+.program-card-cta {
+    display: inline-block;
+    margin-top: auto;
+    padding-top: 8px;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--primary-red);
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    transition: color var(--transition-hover);
+}
+
+.program-card-cta:hover {
+    color: #e05e00;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+    .programs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .program-card-featured {
+        transform: none;
+    }
+
+    .program-card-featured:hover {
+        transform: translateY(-8px);
+    }
+}
+
+@media (max-width: 768px) {
+    .programs-section {
+        width: 92%;
+        padding: 48px 28px;
+        margin: 60px auto;
+    }
+
+    .programs-header {
+        margin-bottom: 28px;
+    }
+}
+
+@media (max-width: 560px) {
+    .programs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .programs-section {
+        padding: 36px 20px;
+        margin: 40px auto;
+        border-radius: 22px;
+    }
+
+    .programs-heading {
+        font-size: 1.5rem;
+    }
+
+    .program-card {
+        padding: 28px;
+    }
+}

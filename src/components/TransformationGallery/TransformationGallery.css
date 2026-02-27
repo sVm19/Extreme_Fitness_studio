@@ -1,0 +1,321 @@
+/* ============================================================
+   CTA BUTTON
+   ============================================================ */
+.tg-cta-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 60px;
+}
+
+/* ============================================================
+   HINDI HEADER
+   ============================================================ */
+.tg-header {
+    text-align: center;
+    padding-top: 80px;
+    margin-bottom: 20px;
+}
+
+.tg-primary-hindi {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: #222222;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.tg-supporting-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tg-supporting-line {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #555555;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .tg-primary-hindi {
+        font-size: 2.5rem;
+    }
+
+    .tg-supporting-line {
+        font-size: 1rem;
+    }
+}
+
+.tg-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    max-width: 900px;
+    height: 64px;
+    background: var(--bg-card);
+    color: var(--primary-red);
+    border: 2px solid var(--primary-red);
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    cursor: pointer;
+    box-shadow:
+        0 4px 16px rgba(255, 82, 82, 0.14),
+        0 0 28px rgba(255, 82, 82, 0.04);
+    transition:
+        background 250ms ease-in-out,
+        color 250ms ease-in-out,
+        box-shadow 250ms ease-in-out,
+        border-color 250ms ease-in-out,
+        transform 250ms ease-in-out;
+}
+
+.tg-cta-btn:hover {
+    background: var(--primary-red);
+    color: #FFFFFF;
+    border-color: var(--primary-red);
+    transform: translateY(-3px);
+    box-shadow:
+        0 8px 24px rgba(255, 82, 82, 0.24),
+        0 0 42px rgba(255, 82, 82, 0.08);
+}
+
+/* ============================================================
+   MODAL BACKDROP
+   ============================================================ */
+.tg-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.60);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+/* ============================================================
+   MODAL CONTAINER
+   ============================================================ */
+.tg-modal {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.20),
+        0 0 30px rgba(255, 82, 82, 0.06);
+}
+
+/* Scrollbar styling */
+.tg-modal::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tg-modal::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.tg-modal::-webkit-scrollbar-thumb {
+    background: rgba(229, 57, 53, 0.20);
+    border-radius: 3px;
+}
+
+.tg-modal-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+/* ============================================================
+   CLOSE BUTTON
+   ============================================================ */
+.tg-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 2px solid var(--primary-red);
+    color: var(--primary-red);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+        background 250ms ease-in-out,
+        color 250ms ease-in-out,
+        box-shadow 250ms ease-in-out;
+    z-index: 2;
+}
+
+.tg-close-btn:hover {
+    background: var(--primary-red);
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(229, 57, 53, 0.20);
+}
+
+/* ============================================================
+   IMAGE GRID
+   ============================================================ */
+.tg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* ============================================================
+   IMAGE CARD
+   ============================================================ */
+.tg-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    border: 1px solid transparent;
+    transition:
+        transform 300ms ease-in-out,
+        box-shadow 300ms ease-in-out,
+        border-color 300ms ease-in-out;
+}
+
+.tg-card:hover {
+    transform: scale(1.03);
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.10),
+        0 0 16px rgba(255, 82, 82, 0.12);
+    border-color: rgba(229, 57, 53, 0.25);
+}
+
+.tg-card-img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
+    background: var(--bg-warm);
+}
+
+/* Label overlay */
+.tg-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.50) 0%,
+            transparent 100%);
+    pointer-events: none;
+}
+
+.tg-card-label {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    letter-spacing: 0.03em;
+}
+
+/* Empty state */
+.tg-empty {
+    text-align: center;
+    color: var(--text-mid);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    padding: 60px 20px;
+    line-height: 1.6;
+}
+
+.tg-empty code {
+    background: rgba(229, 57, 53, 0.08);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.82rem;
+    color: var(--primary-red);
+}
+
+/* ============================================================
+   FULLSCREEN PREVIEW
+   ============================================================ */
+.tg-fullscreen {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+    cursor: zoom-out;
+    padding: 40px;
+}
+
+.tg-fullscreen-img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 12px;
+    object-fit: contain;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.40);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+    .tg-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .tg-cta-btn {
+        width: 90%;
+        height: 64px;
+        font-size: 0.92rem;
+    }
+
+    .tg-modal {
+        padding: 28px 20px;
+        border-radius: 20px;
+    }
+
+    .tg-modal-title {
+        font-size: 1.6rem;
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 560px) {
+    .tg-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tg-cta-btn {
+        width: 90%;
+        height: 64px;
+        font-size: 0.86rem;
+    }
+
+    .tg-modal {
+        padding: 24px 16px;
+        max-height: 90vh;
+    }
+}

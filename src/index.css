@@ -1,0 +1,233 @@
+/* ===== RESET & GLOBALS ===== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-ivory: #FDF6EE;
+    --bg-warm: #FFF8F2;
+    --bg-card: #FFFFFF;
+    --primary-red: #E53935;
+    --glow-red: #FF5252;
+    --text-dark: #222222;
+    --text-mid: #555555;
+    --text-light: #888888;
+    --border-red: rgba(229, 57, 53, 0.20);
+    --shadow-red: rgba(255, 82, 82, 0.25);
+    --shadow-red-hover: rgba(255, 82, 82, 0.35);
+    --radius-sm: 12px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --transition-hover: 250ms ease-in-out;
+    --transition-click: 120ms ease;
+    --transition-release: 180ms ease-out;
+    /* Typography tokens */
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Manrope', 'Inter', sans-serif;
+    --font-hindi: 'Noto Sans Devanagari', 'Manrope', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-ivory);
+    color: var(--text-dark);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0.2px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* ===== GLOBAL HEADING SYSTEM ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+/* Italic emphasis inside headings */
+h1 em,
+h2 em,
+h3 em,
+h4 em,
+h5 em,
+h6 em {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Body bold */
+strong,
+b {
+    font-weight: 700;
+}
+
+/* ===== KEYFRAMES ===== */
+
+@keyframes sunGlowReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        text-shadow:
+            0 0 0px rgba(255, 82, 82, 0),
+            0 0 0px rgba(255, 82, 82, 0);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        text-shadow:
+            0 0 14px rgba(255, 82, 82, 0.20),
+            0 0 30px rgba(255, 82, 82, 0.10),
+            0 0 50px rgba(229, 57, 53, 0.05);
+    }
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes floatPulse {
+
+    0%,
+    100% {
+        transform: translate(-50%, 50%) translateY(0);
+    }
+
+    50% {
+        transform: translate(-50%, 50%) translateY(-6px);
+    }
+}
+
+@keyframes breatheGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 16px rgba(229, 57, 53, 0.22),
+            0 0 36px rgba(229, 57, 53, 0.08);
+    }
+
+    50% {
+        box-shadow:
+            0 0 22px rgba(229, 57, 53, 0.32),
+            0 0 48px rgba(229, 57, 53, 0.12);
+    }
+}
+
+@keyframes ambientDrift {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    33% {
+        transform: translate(calc(-50% + 15px), calc(-50% - 10px)) scale(1.05);
+    }
+
+    66% {
+        transform: translate(calc(-50% - 10px), calc(-50% + 8px)) scale(0.97);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes lightSweep {
+    0% {
+        left: -120%;
+    }
+
+    100% {
+        left: 160%;
+    }
+}
+
+@keyframes glowBreathe {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 18px rgba(255, 82, 82, 0.18),
+            0 0 40px rgba(255, 82, 82, 0.10),
+            0 0 70px rgba(255, 82, 82, 0.05);
+    }
+
+    50% {
+        box-shadow:
+            0 0 22px rgba(255, 82, 82, 0.22),
+            0 0 48px rgba(255, 82, 82, 0.13),
+            0 0 80px rgba(255, 82, 82, 0.06);
+    }
+}
+
+@keyframes heroFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* ===== CURSOR GLOW ===== */
+.cursor-glow {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 82, 82, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    will-change: left, top;
+}
+
+@media (max-width: 768px) {
+    .cursor-glow {
+        display: none;
+    }
+}

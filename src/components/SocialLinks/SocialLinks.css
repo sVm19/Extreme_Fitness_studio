@@ -1,0 +1,77 @@
+/* ===== SOCIAL BOX (CTA Panel — Warm Ivory) ===== */
+.social-box {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--border-red);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow:
+        0 4px 18px var(--shadow-red),
+        0 0 35px rgba(255, 82, 82, 0.06);
+    transition:
+        transform var(--transition-hover),
+        box-shadow var(--transition-hover);
+}
+
+.social-box:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 8px 28px var(--shadow-red-hover),
+        0 0 50px rgba(255, 82, 82, 0.08);
+}
+
+/* ===== Header ===== */
+.social-box-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.social-box-heading {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary-red);
+    text-shadow:
+        0 0 8px rgba(255, 82, 82, 0.15),
+        0 0 18px rgba(255, 82, 82, 0.06);
+    margin-bottom: 8px;
+}
+
+.social-box-sub {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--text-mid);
+    letter-spacing: 0.01em;
+}
+
+/* ===== Buttons container ===== */
+.social-box-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .social-box {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .social-box-heading {
+        font-size: 1.5rem;
+    }
+
+    .social-box-header {
+        margin-bottom: 22px;
+    }
+}

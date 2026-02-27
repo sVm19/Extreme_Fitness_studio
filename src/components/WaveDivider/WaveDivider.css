@@ -1,0 +1,43 @@
+/* ===== WAVE DIVIDER ===== */
+.wave-divider {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    margin-top: -20px;
+    z-index: 1;
+}
+
+/* Thin glowing accent line */
+.wave-divider-line {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 82, 82, 0.40) 30%,
+            rgba(255, 82, 82, 0.40) 70%,
+            transparent 100%);
+    box-shadow: 0 0 8px rgba(255, 82, 82, 0.20);
+    border-radius: 1px;
+}
+
+/* SVG wave — animated gradient shift */
+.wave-divider-svg {
+    display: block;
+    width: 200%;
+    height: 100%;
+    animation: waveShift 10s linear infinite;
+}
+
+@keyframes waveShift {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

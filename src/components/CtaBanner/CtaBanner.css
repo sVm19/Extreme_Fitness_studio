@@ -1,0 +1,129 @@
+/* ===== CTA BANNER WRAPPER ===== */
+.cta-banner-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0 0;
+}
+
+/* ===== PILL BUTTON — PRIMARY ===== */
+.cta-banner-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    max-width: 900px;
+    height: 64px;
+    background: #FFFFFF;
+    border: 2px solid var(--primary-red);
+    border-radius: 999px;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow:
+        0 4px 18px rgba(255, 82, 82, 0.18),
+        0 0 35px rgba(255, 82, 82, 0.06);
+    transition:
+        background 280ms ease-in-out,
+        border-color 280ms ease-in-out,
+        box-shadow 280ms ease-in-out,
+        transform 280ms ease-in-out;
+}
+
+/* Hover — fill orange */
+.cta-banner-btn:hover {
+    background: var(--primary-red);
+    border-color: var(--primary-red);
+    transform: translateY(-3px);
+    box-shadow:
+        0 8px 28px rgba(255, 82, 82, 0.26),
+        0 0 50px rgba(255, 82, 82, 0.10);
+}
+
+/* Click — tactile press */
+.cta-banner-btn:active {
+    transform: translateY(-1px) scale(0.95);
+    box-shadow:
+        0 4px 18px rgba(255, 82, 82, 0.30),
+        0 0 40px rgba(255, 82, 82, 0.12);
+    transition:
+        transform 120ms ease,
+        box-shadow 120ms ease;
+}
+
+/* ===== TEXT ===== */
+.cta-banner-text {
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    color: var(--primary-red);
+    transition: color 280ms ease-in-out;
+}
+
+.cta-banner-btn:hover .cta-banner-text {
+    color: #FFFFFF;
+}
+
+/* ===== LIGHT SWEEP ===== */
+.cta-banner-sweep {
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(105deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.08) 45%,
+            rgba(255, 255, 255, 0.14) 50%,
+            rgba(255, 255, 255, 0.08) 55%,
+            transparent 70%);
+    animation: ctaSweep 9s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes ctaSweep {
+    0% {
+        left: -120%;
+    }
+
+    100% {
+        left: 160%;
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .cta-banner-wrapper {
+        padding: 48px 0 0;
+    }
+
+    .cta-banner-btn {
+        width: 90%;
+        height: 64px;
+    }
+
+    .cta-banner-text {
+        font-size: 0.88rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-banner-wrapper {
+        padding: 36px 0 0;
+    }
+
+    .cta-banner-btn {
+        width: 90%;
+        height: 64px;
+    }
+
+    .cta-banner-text {
+        font-size: 0.82rem;
+        padding: 0 20px;
+        text-align: center;
+    }
+}

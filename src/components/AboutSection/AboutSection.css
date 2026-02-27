@@ -1,0 +1,291 @@
+/* ===== ABOUT SECTION ===== */
+.about-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+/* ============================================================
+   LAYER 1 — PARALLAX BACKGROUND
+   Moves via Framer Motion (useScroll + useTransform)
+   ============================================================ */
+.about-parallax-bg {
+    position: absolute;
+    inset: -80px 0;
+    pointer-events: none;
+    z-index: 0;
+    will-change: transform;
+}
+
+/* Blob 1 — large orange glow */
+.parallax-blob {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.parallax-blob-1 {
+    width: 650px;
+    height: 650px;
+    top: 5%;
+    left: -8%;
+    background: radial-gradient(circle at center,
+            rgba(255, 82, 82, 0.12) 0%,
+            rgba(255, 82, 82, 0.04) 40%,
+            transparent 70%);
+}
+
+/* Blob 2 — soft white glow */
+.parallax-blob-2 {
+    width: 500px;
+    height: 500px;
+    top: 30%;
+    right: -5%;
+    background: radial-gradient(circle at center,
+            rgba(255, 255, 255, 0.35) 0%,
+            rgba(255, 255, 255, 0.10) 40%,
+            transparent 70%);
+}
+
+/* Blob 3 — faint orange accent */
+.parallax-blob-3 {
+    width: 400px;
+    height: 400px;
+    bottom: 10%;
+    left: 25%;
+    background: radial-gradient(circle at center,
+            rgba(229, 57, 53, 0.06) 0%,
+            rgba(255, 82, 82, 0.02) 40%,
+            transparent 70%);
+}
+
+/* ============================================================
+   LAYER 3 — OVERLAY GLOW
+   ============================================================ */
+.about-overlay-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 40% at 50% 60%,
+            rgba(255, 82, 82, 0.03) 0%,
+            transparent 70%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.about-container {
+    position: relative;
+    width: 80%;
+    max-width: 1100px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    background: var(--bg-warm);
+    border-radius: 24px;
+    border: 1px solid rgba(229, 57, 53, 0.10);
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.05),
+        0 0 16px rgba(255, 82, 82, 0.05);
+    z-index: 1;
+}
+
+/* ============================================================
+   LEFT — IMAGE PANEL
+   ============================================================ */
+.about-image-panel {
+    flex: 0 0 45%;
+}
+
+.about-image-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.06),
+        0 0 16px rgba(255, 82, 82, 0.05);
+    transition:
+        transform var(--transition-hover),
+        box-shadow var(--transition-hover);
+}
+
+.about-image-wrapper:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.08),
+        0 0 24px rgba(255, 82, 82, 0.12);
+}
+
+.about-portrait {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+    background-color: var(--bg-warm);
+}
+
+/* Glass overlay */
+.about-glass-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+/* ============================================================
+   RIGHT — TEXT BLOCK
+   ============================================================ */
+.about-text-block {
+    flex: 1 1 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Label */
+.about-label {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--glow-red);
+}
+
+/* Heading */
+.about-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: var(--text-dark);
+    line-height: 1.15;
+}
+
+/* Accent line */
+.about-accent-line {
+    width: 80px;
+    height: 3px;
+    background: var(--primary-red);
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(255, 82, 82, 0.50);
+    margin: 4px 0 8px;
+}
+
+/* Paragraph */
+.about-paragraph {
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--text-mid);
+}
+
+/* ===== CTA BUTTON ===== */
+.about-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    padding: 14px 32px;
+    margin-top: 8px;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--primary-red);
+    background: var(--bg-card);
+    border: 1.5px solid var(--primary-red);
+    border-radius: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition:
+        color var(--transition-hover),
+        background var(--transition-hover),
+        box-shadow var(--transition-hover),
+        border-color var(--transition-hover);
+}
+
+.about-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--primary-red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 300ms ease-in-out;
+    z-index: -1;
+    border-radius: 11px;
+}
+
+.about-cta:hover {
+    color: #FFFFFF;
+    border-color: transparent;
+    box-shadow:
+        0 4px 18px rgba(229, 57, 53, 0.18),
+        0 0 30px rgba(229, 57, 53, 0.06);
+}
+
+.about-cta:hover::before {
+    transform: scaleX(1);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 60px 0;
+    }
+
+    .about-container {
+        flex-direction: column;
+        padding: 36px 28px;
+        gap: 28px;
+    }
+
+    .about-image-panel {
+        flex: 1 1 100%;
+        width: 100%;
+        order: -1;
+    }
+
+    .about-text-block {
+        flex: 1 1 100%;
+        width: 100%;
+        text-align: left;
+    }
+
+    .about-heading {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section {
+        padding: 40px 0;
+    }
+
+    .about-container {
+        width: 92%;
+        padding: 28px 20px;
+        gap: 24px;
+    }
+
+    .about-heading {
+        font-size: 1.4rem;
+    }
+
+    .about-paragraph {
+        font-size: 0.85rem;
+    }
+
+    .about-cta {
+        padding: 12px 26px;
+        font-size: 0.84rem;
+    }
+}

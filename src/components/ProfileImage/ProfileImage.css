@@ -1,0 +1,46 @@
+/* ===== PROFILE IMAGE ===== */
+.profile-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 10;
+    animation: floatPulse 3.5s ease-in-out infinite;
+}
+
+.profile-ring {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    padding: 4px;
+    background: conic-gradient(var(--primary-red),
+            var(--glow-red),
+            var(--primary-red));
+    animation: breatheGlow 3.5s ease-in-out infinite;
+    /* Depth shadow — elevated above card */
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.08));
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #1A1A1A;
+    background-color: var(--bg-warm);
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .profile-ring {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-ring {
+        width: 96px;
+        height: 96px;
+    }
+}

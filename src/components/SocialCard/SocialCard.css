@@ -1,0 +1,104 @@
+/* ===== SOCIAL CARD (Button — Warm Ivory) ===== */
+.social-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 55px;
+    width: 100%;
+    padding: 0 18px;
+    background: var(--bg-card);
+    border: 1.5px solid var(--primary-red);
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition:
+        transform var(--transition-hover),
+        box-shadow var(--transition-hover),
+        border-color var(--transition-hover);
+}
+
+/* Orange fill sweep from left */
+.social-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--primary-red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 300ms ease-in-out;
+    z-index: -1;
+    border-radius: 11px;
+}
+
+/* Hover */
+.social-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 6px 20px var(--shadow-red),
+        0 0 30px rgba(255, 82, 82, 0.08);
+    border-color: transparent;
+}
+
+.social-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Click */
+.social-card:active {
+    transform: translateY(-3px) scale(0.95);
+    box-shadow:
+        0 4px 14px var(--shadow-red-hover);
+    transition: transform var(--transition-click);
+}
+
+/* ===== Icon ===== */
+.social-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--primary-red);
+    transition: fill 300ms ease-in-out;
+}
+
+.social-card:hover .social-icon svg {
+    fill: #FFFFFF;
+}
+
+/* ===== Label ===== */
+.social-handle {
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--primary-red);
+    transition: color 300ms ease-in-out;
+    white-space: nowrap;
+}
+
+.social-card:hover .social-handle {
+    color: #FFFFFF;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+    .social-card {
+        height: 50px;
+        padding: 0 14px;
+        gap: 10px;
+    }
+
+    .social-handle {
+        font-size: 0.84rem;
+    }
+}
